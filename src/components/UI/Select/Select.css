@@ -1,6 +1,5 @@
 .Select {
     margin-bottom: 15px;
-
 }
 
 .Select label {
@@ -18,5 +17,5 @@
     height: 29px;
     width: 100%;
     outline: none;
-    transition: all 200ms ease-in-out;
+    transition: all 300ms ease-in-out;
 }
