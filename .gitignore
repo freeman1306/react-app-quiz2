@@ -23,6 +23,7 @@
 /src(Vladilen course)
 /src(quiz)
 src(router)
+/src(quizz)
 
 npm-debug.log*
 yarn-debug.log*
