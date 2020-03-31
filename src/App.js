@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import './App.scss'
 import Counter from './Counter'
+import { add, sub, addNumber, asyncAdd } from './redux/actions/actions'
+import { number } from 'prop-types'
 
 
 class App extends Component { 
@@ -27,9 +29,14 @@ class App extends Component {
 
         <div className="Actions">
           <button onClick={() => this.props.onAdNumber(15)}>Добавить 15</button>
-          <button onClick={() => this.props.onMinNumber(17)}>Вычесть 17</button>
+          <button onClick={() => this.props.onAdNumber(17)}>Вычесть 17</button>
         </div>
         
+        <div className="Actions">
+          <button onClick={() => this.props.onAsyncAdd(100)}>Async</button>
+
+        </div>
+
         <Counter />
       </div>
     )
@@ -42,13 +49,14 @@ class App extends Component {
 function mapDispatchToProps(dispatch) {
   return {
     addCount: () => {
-      dispatch({type: "ADD"})
+      dispatch(add())
     },
     removeCount: () => {
-      dispatch({type: "REMOVE"})
+      dispatch(sub())
     },
-    onAdNumber: number => dispatch({ type: "ADD_NUMBER", payload: number }),
-    onMinNumber: number => dispatch({ type: "REM_NUMBER", payload: number })
+    onAdNumber: number => dispatch(addNumber(number)),
+    onAsyncAdd: (number) => dispatch(asyncAdd(number))
+   
   }
  }
 
