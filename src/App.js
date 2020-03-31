@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import './App.scss'
+import Counter from './Counter'
+
 
 class App extends Component { 
 
@@ -27,6 +29,8 @@ class App extends Component {
           <button onClick={() => this.props.onAdNumber(15)}>Добавить 15</button>
           <button onClick={() => this.props.onMinNumber(17)}>Вычесть 17</button>
         </div>
+        
+        <Counter />
       </div>
     )
   }
@@ -49,7 +53,7 @@ function mapDispatchToProps(dispatch) {
  }
 
 function mapStateToProps(state) {
- return {counter: state.counter}
+ return {counter: state.counter1.counter}
 }
 
 

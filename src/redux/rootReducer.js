@@ -1,32 +1,9 @@
-// import { stat } from "fs-extra"
+import { combineReducers } from 'redux'
 
-const initialState = {
-  counter: 1000
-}
+import counter1 from './reducers/counter1'
+import counter2 from './reducers/counter2'
 
-export default function rootReducer(state = initialState, action) {
-  switch (action.type) {
-    case "ADD":
-      return {
-        counter: state.counter + 1
-      }
-      case "REMOVE":
-        return {
-          counter: state.counter - 1
-        }
-        case "ADD_NUMBER":
-          return {
-            counter: state.counter + action.payload
-          }
-          case "REM_NUMBER":
-            return {
-              counter: state.counter - action.payload
-            }
-    
-    default :  return {
-      counter: state.counter 
-    }
-}
-  
-// return state
-}
+export default combineReducers({
+  counter1,
+  counter2
+})
