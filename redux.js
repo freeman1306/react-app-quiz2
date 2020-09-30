@@ -4,6 +4,8 @@ const initialState = {
   counter: 0
 }
 
+
+
 // Reducer
 const reducer = (state = initialState, action) => {
 
@@ -28,6 +30,9 @@ const reducer = (state = initialState, action) => {
   return state
 
 }
+
+
+
 
 // Store
 const store = redux.createStore(reducer)
